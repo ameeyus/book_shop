@@ -1,0 +1,64 @@
+/* style.css */
+main {
+    padding: 1rem;
+}
+
+.goods {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.goods .good {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid #cbcbcb;
+    border-radius: 10px;
+}
+.goods .good .image {
+    padding: .5rem;
+    margin-bottom: 1rem;
+    max-width: 80%;
+    max-height: 35vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    word-break: break-word;
+}
+.goods .good .image img {
+    max-width: 100%;
+    max-height: 45vh;
+}
+
+.goods .good:hover img {
+    transform: scale(1.1);
+}
+.goods .good p {
+    text-align: center;
+}
+.goods .good p.price {
+    margin-bottom: 0;
+    color: aquamarine;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.goods .good button {
+    align-items: center;
+    border-radius: 5px;
+    background-color: #9476b5;
+    font-size: 22px;
+    bottom: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .goods {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,172 @@
+/* common.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: gray;
+    font-size: 16px;
+}
+img {
+    display: block;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+button {
+    padding: 0;
+    border: none;
+}
+img {
+    display: block;
+}
+
+header .toggle_menu {
+    display: none;
+}
+
+header {
+    background: #9476b5;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 15%);
+    z-index: 2;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+header nav ul a {
+    transition: color .5s;
+}
+
+header nav ul a:hover {
+    color: gray;
+}
+header .icons {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+    margin-right: 1rem;
+    padding: 1rem;
+}
+
+header .icons img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+header > .inner_container {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+input {
+    padding: .6rem 10rem;
+    transition: border .5s;
+    outline: transparent;
+    border: 1px solid #cbcbcb;
+    border-radius: 10px;
+    display: block;
+}
+
+.search-icon {
+    display: none; /* Hide by default */
+    width: 24px; /* Adjust size as needed */
+    height: 15px; /* Adjust size as needed */
+    margin-left: 0.5rem; /* Adjust spacing as needed */
+}
+.popup #popup_message {
+    position: fixed;
+    inset: 0;
+    display: none;
+    background: rgb(0 0 0 / 50%);
+    z-index: 3;
+}
+
+#popup_message.active {
+    display: flex;
+}
+
+#popup_message .center {
+    width: 300px;
+    margin: auto;
+    background: #9476b5;
+    padding: 1rem;
+}
+
+#popup_message .center p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 0;
+}
+@media screen and (max-width: 600px) {
+    header > .inner_container, main > .inner_container {
+        width: 100%;
+    }
+    header{
+        top: 0;
+        padding: 0;
+    }
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgb(0 0 0 / .5);
+        display: none;
+    }
+    nav.active {
+        display: block;
+    }
+    header .toggle_menu {
+        display: block;
+    }
+    header .toggle_menu img {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+    header nav ul {
+        flex-direction: column;
+        background: #9476b5;
+        padding: 1rem;
+        height: 100%;
+        box-sizing: border-box;
+        width: 75%;
+        position: relative;
+    }
+    header nav.active ul {
+        animation: ul_show .5s forwards;
+    }
+    @keyframes ul_show {
+        from {
+            left: -75%;
+        }
+        to {
+            left: 0;
+        }
+    }
+    input{
+        padding: 0.5rem 3rem;
+    }
+    .search-form {
+        display: none; /* Hide the search form */
+    }
+    .search-icon {
+        display: inline; /* Show the search icon */
+    }
+}
+
+
